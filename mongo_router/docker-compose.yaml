@@ -1,0 +1,14 @@
+services:
+
+  mongos:
+    container_name: mongos
+    image: mongo:latest
+    command: mongos --configdb config_rs/configsvr1:27017,configsvr2:27017,configsvr3:27017 --port 27017 --bind_ip_all
+    ports:
+      - 30000:27017
+    networks:
+      - mongo-shard-net
+
+networks:
+  mongo-shard-net:
+    external: true
