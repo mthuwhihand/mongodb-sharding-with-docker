@@ -28,7 +28,7 @@ docker network create mongo-shard-net
 To start the config servers, execute the following Docker command:
 
 ```bash
-docker-compose -f config_server/docker-compose.yaml up -d
+docker compose -f config_server/docker-compose.yaml up -d
 ```
 
 Once the instances are up, connect to the container using the following command:
@@ -61,11 +61,11 @@ rs.status()
 Repeat a similar process for creating shard-1 and shard-2 Docker containers:
 
 ```bash
-docker-compose -f shard_server1/docker-compose.yaml up -d 
+docker compose -f shard_server1/docker-compose.yaml up -d 
 ``` 
 
 ```bash
-docker-compose -f shard_server2/docker-compose.yaml up -d
+docker compose -f shard_server2/docker-compose.yaml up -d
 ```
 
 Initiate the replica sets for shard-1 and shard-2:
@@ -129,7 +129,7 @@ exit
 Finally, start the Mongo routers:
 
 ```bash
-docker-compose -f mongo_router/docker-compose.yaml up -d
+docker compose -f mongo_router/docker-compose.yaml up -d
 ```
 
 ```bash
@@ -243,19 +243,19 @@ db.orders.countDocuments()
 ```
 Down containers
 ```bash
-docker-compose -f config_server/docker-compose.yaml down -v
+docker compose -f config_server/docker-compose.yaml down -v
 ```
 
 ```bash
-docker-compose -f shard_server1/docker-compose.yaml down -v
+docker compose -f shard_server1/docker-compose.yaml down -v
 ``` 
 
 ```bash
-docker-compose -f shard_server2/docker-compose.yaml down -v
+docker compose -f shard_server2/docker-compose.yaml down -v
 ```
 
 ```bash
-docker-compose -f mongo_router/docker-compose.yaml down -v
+docker compose -f mongo_router/docker-compose.yaml down -v
 ```
 
 ### References:
