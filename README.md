@@ -241,6 +241,23 @@ if (bulk.length > 0) {
 ```bash
 db.orders.countDocuments()
 ```
+Down containers
+```bash
+docker-compose -f config_server/docker-compose.yaml down -v
+```
+
+```bash
+docker-compose -f shard_server1/docker-compose.yaml down -v
+``` 
+
+```bash
+docker-compose -f shard_server2/docker-compose.yaml down -v
+```
+
+```bash
+docker-compose -f mongo_router/docker-compose.yaml down -v
+```
+
 ### References:
 ```url
 https://github.com/yasasdy/mongodb-sharding.git
